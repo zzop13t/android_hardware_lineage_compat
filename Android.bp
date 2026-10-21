@@ -628,6 +628,9 @@ cc_library_shared {
         "android.media.audio.common.types-V5-cpp",
         "audioclient-types-aidl-cpp",
         "libaudioclient",
+        // AudioSystem::setDeviceConnectionState() lives in libaudiobase in the
+        // current frameworks/av split; libaudioclient only re-exports part of it.
+        "libaudiobase",
         "libaudiofoundation",
         "libutils",
     ],
